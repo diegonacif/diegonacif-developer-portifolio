@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  min-width: 100vw;
   height: 100dvh;
   background-color: $gray-900;
   color: $gray-100;
@@ -24,14 +24,6 @@
     height: 25rem;
     overflow: hidden;
 
-    .gradient-overlay {
-      @include absoluteCentered;
-      background-color: $gray-700;
-      width: 25rem;
-      height: 25rem;
-      z-index: 10;
-    }
-    
     #diego-img {
       @include absoluteCentered(50%, 55%);
       width: 74%;

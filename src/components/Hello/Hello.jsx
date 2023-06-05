@@ -16,14 +16,6 @@ export const Hello = () => {
           <img src={blob1} alt="" id="blob1" />
           <img src={diegoImg} alt="diego image" id="diego-img" />
         </Parallax>
-        {/* <Parallax 
-          translateY={['120px', '150px']}
-          opacity={[0, 0.8]}
-          shouldAlwaysCompleteAnimation={true}
-          style={{ zIndex: 10 }}
-        >
-          <div className="gradient-overlay"></div>
-        </Parallax> */}
       </section>
       <section className="hello-text">
         <Parallax translateX={[-11, 20]}>

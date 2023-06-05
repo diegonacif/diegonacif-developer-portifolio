@@ -30,11 +30,11 @@
 }
 
 html {
-  // scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
 }
 
 .app-container {
-  // overflow: hidden;
+  width: 100vw;
 }
 
 a {
@@ -47,7 +47,7 @@ a {
   }
 }
 
-$assetsUrl: '../assets';
+$assetsUrl: './assets';
 
 // Color palette
 $gray-100: #F2F2F2;
@@ -76,6 +76,25 @@ $yellow-100: #ece310;
 $light-orange-100: #fe9672;
 $orange-200: #de9026;
 $dark-orange-200: #dc693d;
+
+// Media Variables
+$tablet-size: "min-width: 510px";
+$notebook-size: "min-width: 768px";
+$desktop-size: "min-width: 1024px";
+
+@mixin responsive-padding($pt: 0, $pb: 0) {
+  padding: $pt 0.75rem $pb;
+
+  @media only screen and ($tablet-size) {
+    padding: $pt 4rem $pb;
+  }
+  @media only screen and ($notebook-size) {
+    padding: $pt 6rem $pb;
+  }
+  @media only screen and ($desktop-size) {
+    padding: $pt calc(8rem + 10vw) $pb;
+  }
+}
 
 @import './components/Hello/Hello';
 @import './components/AboutMe/AboutMe';
