@@ -29,6 +29,12 @@
   scrollbar-width: auto;
 }
 
+.app-container {
+  height: 100vh;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -70,3 +76,4 @@ $orange-200: #de9026;
 $dark-orange-200: #dc693d;
 
 @import './components/Hello/Hello';
+@import './components/AboutMe/AboutMe';
