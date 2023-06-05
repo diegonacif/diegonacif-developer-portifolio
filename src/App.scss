@@ -30,8 +30,7 @@
 }
 
 .app-container {
-  height: 100vh;
-  overflow: auto;
+  overflow: hidden;
   scroll-snap-type: y mandatory;
 }
 

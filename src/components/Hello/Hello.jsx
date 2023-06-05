@@ -1,7 +1,9 @@
 import diegoImg from '../../assets/diego-chibi-sofia-art.png';
 import blob1 from '../../assets/blob1.svg';
+import { Parallax } from 'react-scroll-parallax';
 
 export const Hello = () => {
+
   return (
     <div className="hello-container">
       <section className="hello-img">
@@ -9,7 +11,9 @@ export const Hello = () => {
         <img src={diegoImg} alt="diego image" id="diego-img" />
       </section>
       <section className="hello-text">
-        <span>Olá, meu nome é</span>
+        <Parallax translateX={[-65, 100]}>
+          <span>Olá, meu nome é</span>
+        </Parallax>
         <div className="my-name" translate='no'>
           <h2>Diego&nbsp;</h2>
           <h2>Nacif</h2>
