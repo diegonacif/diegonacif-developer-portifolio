@@ -24,12 +24,13 @@
     
     #diego-img {
       @include absoluteCentered(50%, 55%);
-      width: 80%;
+      width: 74%;
     }
 
     #blob1 {
-      @include absoluteCentered(44.5%, 40%, 20deg);
-      min-width: 120%;
+      @include absoluteCentered(45.4%, 40%, 22deg);
+      min-width: 110%;
+      filter: drop-shadow(0 0 8px #698cd8);
     }
   }
 
@@ -53,7 +54,7 @@
       
 
       :nth-child(2) {
-        color: $blue-500;
+        color: $light-blue-200;
       }
     }
   }
@@ -73,11 +74,11 @@
       color: $gray-100;
 
       &:first-child {
-        background-color: $blue-500;
+        background-color: $light-blue-200;
       }
       &:last-child {
         background-color: transparent;
-        border: 2px solid $gray-200;
+        border: 2px solid $light-blue-200;
       }
     }
   }
