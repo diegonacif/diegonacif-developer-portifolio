@@ -20,18 +20,21 @@
   }
   
   &::-webkit-scrollbar-thumb {
-    background-color: #4276E9;
+    background-color: #388ea8;
     border-radius: 4px;
   }
 
   // Custom Scrollbar for Mozilla
-  scrollbar-color: #4276E9 rgba(30, 30, 30, 0.60);
+  scrollbar-color: #388ea8 rgba(30, 30, 30, 0.60);
   scrollbar-width: auto;
 }
 
+html {
+  // scroll-snap-type: y mandatory;
+}
+
 .app-container {
-  overflow: hidden;
-  scroll-snap-type: y mandatory;
+  // overflow: hidden;
 }
 
 a {

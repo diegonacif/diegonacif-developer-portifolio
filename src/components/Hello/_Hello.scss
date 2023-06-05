@@ -11,9 +11,10 @@
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: $gray-900;
   color: $gray-100;
+  overflow: hidden;
   scroll-snap-align: start;
 
   .hello-img {
@@ -22,16 +23,26 @@
     max-width: 100vw;
     height: 25rem;
     overflow: hidden;
+
+    .gradient-overlay {
+      @include absoluteCentered;
+      background-color: $gray-700;
+      width: 25rem;
+      height: 25rem;
+      z-index: 10;
+    }
     
     #diego-img {
       @include absoluteCentered(50%, 55%);
       width: 74%;
+      z-index: 10;
     }
 
     #blob1 {
       @include absoluteCentered(45.4%, 40%, 22deg);
       min-width: 110%;
       filter: drop-shadow(0 0 8px #698cd8);
+      z-index: 10;
     }
   }
 
