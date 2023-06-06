@@ -44,8 +44,8 @@ export const AboutMe = () => {
       </div>
       <Parallax 
         translateY={['50px', '0px']}
-        opacity={[0, 1]}
-        shouldAlwaysCompleteAnimation={true}
+        opacity={[0.5, 1]}
+        // shouldAlwaysCompleteAnimation={true}
         style={{ zIndex: 10 }}
       >
         <div className="my-photo" />

@@ -6,6 +6,7 @@
   min-width: 100vw;
   scroll-snap-align: start;
   scroll-padding-top: 2rem;
+  padding-top: 2rem;
   background-color: $gray-900;
   color: $gray-100;
 
@@ -14,13 +15,13 @@
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    padding-top: 2rem;
-    
 
     span {
+      position: relative;
       color: $light-blue-200;
       font-size: 2rem;
       font-weight: 600;
+      top: 0.1rem;
     } 
 
     h2 {
@@ -47,5 +48,6 @@
     background-repeat: no-repeat;
     background-position: center center;
     margin: 4rem auto 0 auto;
+    filter: drop-shadow(0 0 6px $light-blue-200);
   }
 }
