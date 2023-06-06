@@ -18,24 +18,52 @@ export const Hello = () => {
         </Parallax>
       </section>
       <section className="hello-text">
-        <Parallax translateX={[-11, 20]}>
+        <Parallax 
+          translateX={[0, 15]}
+          opacity={[1, 0]}
+          shouldAlwaysCompleteAnimation={true}
+        >
           <span>Olá, meu nome é</span>
         </Parallax>
         <div className="my-name" translate='no'>
-          <Parallax translateX={[11, -20]}>
+          <Parallax 
+            translateX={[2, -15]}
+            opacity={[1, 0]}
+            shouldAlwaysCompleteAnimation={true}
+          >
             <h2>Diego&nbsp;</h2>
           </Parallax>
-          <Parallax translateX={[-11, 20]}>
+          <Parallax 
+            translateX={[-2, 15]}
+            opacity={[1, 0]}
+            shouldAlwaysCompleteAnimation={true}
+          >
             <h2>Nacif</h2>
           </Parallax>
         </div>
-        <Parallax translateX={[11, -20]}>
+        <Parallax 
+          translateX={[0, -15]}
+          opacity={[1, 0]}
+          shouldAlwaysCompleteAnimation={true}
+        >
           <span>Desenvolvedor <b>Front-End</b></span>
         </Parallax>
       </section>
       <section className="hello-buttons">
-        <button>DOWNLOAD CV</button>
-        <button>GITHUB</button>
+        <Parallax 
+          translateX={[0, -10]}
+          opacity={[1, 0]}
+          shouldAlwaysCompleteAnimation={true}
+        >
+          <button id="cv-button">DOWNLOAD CV</button>
+        </Parallax>
+        <Parallax 
+          translateX={[0, 10]}
+          opacity={[1, 0]}
+          shouldAlwaysCompleteAnimation={true}
+        >
+          <button id="github-button">GITHUB</button>
+        </Parallax>
       </section>
     </div>
   )

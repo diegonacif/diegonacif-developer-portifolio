@@ -22,7 +22,7 @@ export const AboutMe = () => {
           <h2>Sobre mim</h2>
         </Parallax>
         <Parallax 
-          translateX={['100px', '0px']}
+          translateX={['50px', '0px']}
           opacity={[0, 1]}
           shouldAlwaysCompleteAnimation={true}
           style={{ zIndex: 10 }}
@@ -35,7 +35,7 @@ export const AboutMe = () => {
           translateX={['0px', '0px']}
           opacity={[0, 1]}
           shouldAlwaysCompleteAnimation={true}
-          scaleX={[1.2, 1]}
+          // scaleX={[1.2, 1]}
           style={{ zIndex: 10 }}
         >
           <p>Sou desenvolvedor Front-End buscando minha primeira oportunidade na área.</p>
@@ -43,7 +43,7 @@ export const AboutMe = () => {
         </Parallax>
       </div>
       <Parallax 
-        translateY={['200px', '0px']}
+        translateY={['50px', '0px']}
         opacity={[0, 1]}
         shouldAlwaysCompleteAnimation={true}
         style={{ zIndex: 10 }}
