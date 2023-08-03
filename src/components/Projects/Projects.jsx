@@ -2,18 +2,24 @@ import { Parallax } from "react-scroll-parallax"
 import { useEffect, useState } from "react";
 import '../../App.scss';
 import api from "../../services/api";
+import { ProjectCard } from "./components/ProjectCard/ProjectCard";
 
 export const Projects = () => {
   const [imageData, setImageData] = useState([]);
   const [repositories, setRepositories] = useState([]);
   const [loading, setIsLoading] = useState(true);
 
-  // console.log(imageData);
+  const filteredReposList = ['atto-rpg-2', 'totalink-page', 'pokedex-react']
+
+  const filteredRepos = repositories.filter((objeto) =>
+    filteredReposList.includes(objeto.name)
+  );
 
   useEffect(() => {
-    repositories.length > 0 ? setIsLoading(false) : setIsLoading(true);
-  }, [repositories])
+    filteredRepos.length > 0 ? setIsLoading(false) : setIsLoading(true);
+  }, [filteredRepos])
 
+  // Fetching repositories
   useEffect(() => {
     const getRepositories = async () => {
       try {
@@ -27,16 +33,17 @@ export const Projects = () => {
     getRepositories();
   }, []);
 
+  // Fetching main screenshots
   useEffect(() => {
-    if( loading === true) {
+    if(loading) {
       console.log("loading")
     } else {
       const fetchImagesFromRepositories = async () => {
         try {
           const imageUrls = [];
     
-          for (let i = 0; i < repositories.length; i++) {
-            const contentsUrl = repositories[i]?.contents_url;
+          for (let i = 0; i < filteredRepos.length; i++) {
+            const contentsUrl = filteredRepos[i]?.contents_url;
             const response = await api.get(contentsUrl?.replace("{+path}", ""));
             const contents = response.data;
             const contentsArray = Array.isArray(contents) ? contents : [contents];
@@ -48,7 +55,7 @@ export const Projects = () => {
             });
 
             for (const image of imageFiles) {
-              imageUrls.push({ url: image.download_url, repositoryId: repositories[i].id });
+              imageUrls.push({ url: image.download_url, repositoryId: filteredRepos[i].id });
             }
           }
           setImageData(imageUrls);
@@ -60,13 +67,13 @@ export const Projects = () => {
     }
   }, [loading]);
 
-  const getScreenshot = (id) => {
-    const screenshotObject = imageData.find((item) => item.repositoryId === id);
-    return screenshotObject ? screenshotObject.url : null;
-    // return console.log(screenshotObject.url)
-  };
+  // const getScreenshot = (id) => {
+  //   const screenshotObject = imageData.find((item) => item.repositoryId === id);
+  //   return screenshotObject ? console.log(typeof screenshotObject.url) : null;
+  //   // return console.log(screenshotObject.url)
+  // };
 
-  getScreenshot(614936534);
+  // getScreenshot(614936534);
 
   // console.log(getScreenshot(614936534))
 
@@ -99,7 +106,16 @@ export const Projects = () => {
         </Parallax>
       </div>
 
-      <img src={() => getScreenshot(614936534)} alt="" />
+      <div className="project-cards-wrapper">
+        {
+          filteredRepos.map((repo) => (
+            <ProjectCard key={repo.id} repo={repo} imageData={imageData}/>
+          ))
+        }
+      </div>
+
+      {/* <img src={"https://raw.githubusercontent.com/diegonacif/the-planets/main/screenshot.png"} alt="" /> */}
+      {/* <img src={imageData[0]?.url} alt="" /> */}
     </section>
   )
 }

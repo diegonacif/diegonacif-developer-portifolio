@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const accessToken = "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";
+const accessToken = "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";
 
 const api = axios.create({
   baseURL: "https://api.github.com/users/diegonacif",

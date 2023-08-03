@@ -1,0 +1,43 @@
+.project-card-container {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  height: 40rem;
+  padding: 1rem;
+  background-color: $blue-700;
+  border-radius: 8px;
+
+  .image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    border-radius: 8px;
+    overflow: hidden;
+    
+    #projectCardScreenshot {
+      height: 100%;
+      border-radius: 8px;
+    }
+  }
+
+  h3 {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+
+  .buttons-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: auto;
+
+    button {
+      width: 42.5%;
+      height: 2.5rem;
+    }
+  }
+}
