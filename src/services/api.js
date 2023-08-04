@@ -1,13 +1,16 @@
 import axios from "axios";
 
-const accessToken = "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";
+const apiKey = import.meta.env.VITE_GITHUB_ACCESS_TOKEN
+const clientSecret = import.meta.env.VITE_GITHUB_CLIENT_SECRET
+
+console.log(clientSecret)
 
 const api = axios.create({
   baseURL: "https://api.github.com/users/diegonacif",
   client_id: "d3edd6cd01933a54bd7d",
-  client_secret: "766d6eb58ec8025ef8e0c065f7d068de2f0bf3f0",
+  client_secret: clientSecret,
   headers: {
-    Authorization: `Bearer ${accessToken}`,
+    Authorization: `Bearer ${apiKey}`,
     // "Content-Type": "application/json",
   },
 });
