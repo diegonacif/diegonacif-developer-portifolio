@@ -3,8 +3,6 @@ import axios from "axios";
 const apiKey = import.meta.env.VITE_GITHUB_ACCESS_TOKEN
 const clientSecret = import.meta.env.VITE_GITHUB_CLIENT_SECRET
 
-console.log(clientSecret)
-
 const api = axios.create({
   baseURL: "https://api.github.com/users/diegonacif",
   client_id: "d3edd6cd01933a54bd7d",
