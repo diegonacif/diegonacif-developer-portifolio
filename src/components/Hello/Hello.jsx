@@ -49,7 +49,7 @@ export const Hello = () => {
       <section className="hello-buttons">
         <motion.button 
           id="cv-button"
-          transition={{ duration: 0.5, delay: 0.9 }}
+          transition={{ duration: 0.25, delay: 0.9 }}
           initial={{ opacity: 0, scale: 0.9 }} 
           whileInView={{ opacity: 1, scale: 1 }} 
         >
@@ -57,7 +57,7 @@ export const Hello = () => {
         </motion.button>
         <motion.button 
           id="github-button"
-          transition={{ duration: 0.5, delay: 1.1 }}
+          transition={{ duration: 0.25, delay: 1.1 }}
           initial={{ opacity: 0, scale: 0.9 }} 
           whileInView={{ opacity: 1, scale: 1 }} 
         >
