@@ -1,69 +1,68 @@
 import diegoImg from '../../assets/diego-chibi-sofia-art.png';
 import blob1 from '../../assets/blob1.svg';
-import { Parallax } from 'react-scroll-parallax';
+import { motion } from 'framer-motion'
+import '../../App.scss';
 
 export const Hello = () => {
 
   return (
     <div className="hello-container">
-      <section className="hello-img">
-        <Parallax 
-          translateY={['200px', '200px']}
-          opacity={[1, 0]}
-          shouldAlwaysCompleteAnimation={true}
-          style={{ zIndex: 10 }}
-        >
-          <img src={blob1} alt="" id="blob1" />
-          <img src={diegoImg} alt="diego image" id="diego-img" />
-        </Parallax>
-      </section>
+      <motion.section 
+        transition={{ duration: 2 }} 
+        initial={{ opacity: 0 }} 
+        whileInView={{ opacity: 1 }} 
+        className="hello-img"
+      >
+        <img src={blob1} alt="" id="blob1" />
+        <img src={diegoImg} alt="diego image" id="diego-img" />
+      </motion.section>
       <section className="hello-text">
-        <Parallax 
-          translateX={[0, 15]}
-          opacity={[1, 0]}
-          shouldAlwaysCompleteAnimation={true}
+        <motion.span
+          transition={{ duration: 1 }}
+          initial={{ opacity: 0, y: -10 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
         >
-          <span>Olá, meu nome é</span>
-        </Parallax>
+          Olá, meu nome é
+        </motion.span>
         <div className="my-name" translate='no'>
-          <Parallax 
-            translateX={[2, -15]}
-            opacity={[1, 0]}
-            shouldAlwaysCompleteAnimation={true}
+          <motion.h2
+            transition={{ duration: 1 }}
+            initial={{ opacity: 0, x: -30 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+          >Diego&nbsp;</motion.h2>
+          <motion.h2
+            transition={{ duration: 1 }}
+            initial={{ opacity: 0, x: 30 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
           >
-            <h2>Diego&nbsp;</h2>
-          </Parallax>
-          <Parallax 
-            translateX={[-2, 15]}
-            opacity={[1, 0]}
-            shouldAlwaysCompleteAnimation={true}
-          >
-            <h2>Nacif</h2>
-          </Parallax>
+            Nacif
+          </motion.h2>
         </div>
-        <Parallax 
-          translateX={[0, -15]}
-          opacity={[1, 0]}
-          shouldAlwaysCompleteAnimation={true}
+        <motion.span
+          transition={{ duration: 1 }}
+          initial={{ opacity: 0, y: 10 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
         >
-          <span>Desenvolvedor <b>Front-End</b></span>
-        </Parallax>
+          Desenvolvedor <b>Front-End</b>
+        </motion.span>
       </section>
       <section className="hello-buttons">
-        <Parallax 
-          translateX={[0, -10]}
-          opacity={[1, 0]}
-          shouldAlwaysCompleteAnimation={true}
+        <motion.button 
+          id="cv-button"
+          transition={{ duration: 0.5, delay: 0.9 }}
+          initial={{ opacity: 0, scale: 0.9 }} 
+          whileInView={{ opacity: 1, scale: 1 }} 
         >
-          <button id="cv-button">DOWNLOAD CV</button>
-        </Parallax>
-        <Parallax 
-          translateX={[0, 10]}
-          opacity={[1, 0]}
-          shouldAlwaysCompleteAnimation={true}
+          DOWNLOAD CV
+        </motion.button>
+        <motion.button 
+          id="github-button"
+          transition={{ duration: 0.5, delay: 1.1 }}
+          initial={{ opacity: 0, scale: 0.9 }} 
+          whileInView={{ opacity: 1, scale: 1 }} 
         >
-          <button id="github-button">GITHUB</button>
-        </Parallax>
+          GITHUB
+        </motion.button>
       </section>
     </div>
   )

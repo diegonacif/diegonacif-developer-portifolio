@@ -1,12 +1,13 @@
 .about-me-container {
-  @include responsive-padding;
+  @include responsive-padding(2rem, 0);
   position: relative;
   height: 100dvh;
   max-height: 100vh;
-  min-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   scroll-snap-align: start;
-  scroll-padding-top: 2rem;
-  padding-top: 2rem;
+  // scroll-padding-top: 2rem;
+  // padding-top: 2rem;
   background-color: $gray-900;
   color: $gray-100;
 

@@ -1,8 +1,7 @@
-import { Parallax } from "react-scroll-parallax"
 import { useEffect, useState } from "react";
-import '../../App.scss';
 import api from "../../services/api";
 import { ProjectCard } from "./components/ProjectCard/ProjectCard";
+import '../../App.scss';
 
 export const Projects = () => {
   const [imageData, setImageData] = useState([]);
@@ -67,43 +66,12 @@ export const Projects = () => {
     }
   }, [loading]);
 
-  // const getScreenshot = (id) => {
-  //   const screenshotObject = imageData.find((item) => item.repositoryId === id);
-  //   return screenshotObject ? console.log(typeof screenshotObject.url) : null;
-  //   // return console.log(screenshotObject.url)
-  // };
-
-  // getScreenshot(614936534);
-
-  // console.log(getScreenshot(614936534))
-
   return (
     <section className="projects-container">
       <div className="projects-title">
-        <Parallax 
-          translateX={['-100px', '0px']}
-          opacity={[0, 1]}
-          shouldAlwaysCompleteAnimation={true}
-          style={{ zIndex: 10 }}
-        >
-          <span>&lt;</span>
-        </Parallax>
-        <Parallax 
-          translateY={['50px', '0px']}
-          opacity={[0, 1]}
-          shouldAlwaysCompleteAnimation={true}
-          style={{ zIndex: 10 }}
-        >
-          <h2>Projetos</h2>
-        </Parallax>
-        <Parallax 
-          translateX={['50px', '0px']}
-          opacity={[0, 1]}
-          shouldAlwaysCompleteAnimation={true}
-          style={{ zIndex: 10 }}
-        >
-          <span>&gt;</span>
-        </Parallax>
+        <span>&lt;</span>
+        <h2>Projetos</h2>
+        <span>&gt;</span>
       </div>
 
       <div className="project-cards-wrapper">
