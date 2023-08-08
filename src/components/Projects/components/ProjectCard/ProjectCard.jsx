@@ -20,20 +20,24 @@ export const ProjectCard = ({ repo, imageData }) => {
         <div className="text-wrapper">
           <h2 className="repo-title">{repoTitle}</h2>
           <p>{repo.description}</p>
-        </div>
-        <div className="buttons-wrapper">
-          <button onClick={(e) => {
-            e.preventDefault();
-            window.open(repo.homepage);
-          }}>
-            VER O SITE
-          </button>
-          <button onClick={(e) => {
-            e.preventDefault();
-            window.open(repo.html_url);
-          }}>
-            GITHUB
-          </button>
+          <div className="buttons-wrapper">
+            <button 
+              id="to-site-button"
+              onClick={(e) => {
+              e.preventDefault();
+              window.open(repo.homepage);
+            }}>
+              VER O SITE
+            </button>
+            <button 
+              id="to-github-button"
+              onClick={(e) => {
+              e.preventDefault();
+              window.open(repo.html_url);
+            }}>
+              GITHUB
+            </button>
+          </div>
         </div>
       </div>
     </div>
