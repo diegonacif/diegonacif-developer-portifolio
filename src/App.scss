@@ -83,9 +83,11 @@ $orange-200: #de9026;
 $dark-orange-200: #dc693d;
 
 // Media Variables
-$tablet-size: "min-width: 510px";
-$notebook-size: "min-width: 768px";
-$desktop-size: "min-width: 1024px";
+$mobile: "max-width: 480";
+$tablet-size: "min-width: 481px";
+$notebook-size: "min-width: 992px";
+$desktop-size: "min-width: 1200px";
+$big-desktop-size: "min-width: 1920px";
 
 @mixin responsive-padding($pt: 0, $pb: 0) {
   padding: $pt 0.75rem $pb;

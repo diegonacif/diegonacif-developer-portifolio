@@ -63,6 +63,11 @@
   overflow: hidden;
   
 }
+
+.embla__viewport {
+  width: 100vw;
+}
+
 .embla__container {  
   display: flex;
   height: 39rem;
@@ -76,4 +81,34 @@
   flex: 0 0 100%;  
   min-width: 20rem;
   padding: 0 0.75rem;
+}
+
+@media ($notebook-size) {
+  .embla__slide {  
+    display: flex;
+    justify-content: center;
+    flex: 0 0 50%;  
+    min-width: 20rem;
+    padding: 0 0.75rem;
+  }
+}
+
+@media ($desktop-size) {
+  .embla__slide {  
+    display: flex;
+    justify-content: center;
+    flex: 0 0 33.33%;  
+    min-width: 20rem;
+    padding: 0 0.75rem;
+  }
+}
+
+@media ($big-desktop-size) {
+  .embla__slide {  
+    display: flex;
+    justify-content: center;
+    flex: 0 0 25%;  
+    min-width: 20rem;
+    padding: 0 0.75rem;
+  }
 }

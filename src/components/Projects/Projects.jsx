@@ -10,7 +10,7 @@ export const Projects = () => {
   const [repositories, setRepositories] = useState([]);
   const [loading, setIsLoading] = useState(true);
 
-  const filteredReposList = ['atto-rpg-2', 'kan-do', 'totalink-page', 'pokedex-react']
+  const filteredReposList = ['atto-rpg-2', 'kan-do', 'totalink-page', 'pokedex-react', 'frete-facil']
 
   const filteredRepos = repositories.filter((objeto) =>
     filteredReposList.includes(objeto.name)
@@ -99,7 +99,7 @@ export const Projects = () => {
     } 
   }, [emblaApi, onSelect, loading])
 
-  const currentProgress = ((currentScrollSnap + 1) / emblaApi?.slideNodes().length )
+  const currentProgress = ((currentScrollSnap + 1) / emblaApi?.slideNodes().length );
 
   return (
     <section className="projects-container">
@@ -138,9 +138,13 @@ export const Projects = () => {
           <div className="embla__viewport" ref={emblaRef}>
             <div className="embla__container">
               {
-                filteredRepos.map((repo) => (
+                filteredRepos.map((repo, index) => (
                   <div className="embla__slide" key={repo.id} ref={carouselRef}>
-                    <ProjectCard repo={repo} imageData={imageData}/>
+                    <ProjectCard 
+                      repo={repo} 
+                      imageData={imageData} 
+                      activeCard={currentScrollSnap} 
+                      index={index} />
                   </div>
                 ))
               }    
