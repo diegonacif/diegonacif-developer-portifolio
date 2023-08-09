@@ -2,21 +2,22 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 25rem;
-  min-width: calc(25rem - 2rem);
-  max-width: calc(100vw - 1.5rem);
-  height: 40rem;
-  padding: 1rem;
+  width: 97%;
+  min-width: 20rem;
+  max-width: 25rem;
+  height: 38rem;
+  // padding: 1rem;
   background: transparent;
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0px 0px 12px rgba(56, 142, 168, 0.6);
 
   .background-wrapper {
     position: absolute;
     top: 0;
     left: 0;
     width: 25rem;
-    height: 40rem;
+    height: 38rem;
     z-index: 0;
     overflow: hidden;
 
@@ -44,17 +45,19 @@
       overflow: hidden;
       -webkit-filter: drop-shadow(0px 0px 10px rgba(0 0 0 / 90%)); 
       filter: drop-shadow(0px 0px 10px rgba(0 0 0 / 90%));
+
+      margin: 1rem 1rem 0 1rem;
+
       
       #projectCardScreenshot {
         height: 100%;
-        border-radius: 8px;
       }
     }
 
     .text-wrapper {
       display: flex;
       flex-direction: column;
-      background: rgba( 0, 0, 0, 0.7 );
+      background: rgba(10, 25, 29, 0.9);
       -webkit-filter: drop-shadow(0px 0px 8px rgba(0 0 0 / 75%));
       filter: drop-shadow(0px 0px 8px rgba(0 0 0 / 75%));
       backdrop-filter: blur( 8px );
@@ -63,7 +66,7 @@
       width: 100%;
       margin-top: 1rem;
       padding: 1rem 0.75rem;
-      border-radius: 8px;
+      border-radius: 16px 16px 0 0;
       
       .repo-title {
         text-align: center;
@@ -81,18 +84,20 @@
         button {
           width: 42.5%;
           height: 2.5rem;
-          font-size: 1rem;
+          font-size: 0.875rem;
           font-weight: 500;
           border: 0;
           border-radius: 4px;
-          color: $gray-100;
+          cursor: pointer;
   
           &#to-site-button {
             background-color: $light-blue-200;
+            color: $gray-900;
           }
           &#to-github-button {
             background-color: transparent;
             border: 2px solid $light-blue-200;
+            color: $gray-100;
           }
         }
       }

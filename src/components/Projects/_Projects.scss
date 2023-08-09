@@ -1,4 +1,7 @@
 .projects-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 100%;
   height: 100dvh;
@@ -21,6 +24,12 @@
       font-size: 2rem;
       font-weight: 600;
       top: 0.1rem;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &.scroll-button-off {
+        color: $gray-600;
+      }
     } 
 
     h2 {
@@ -29,13 +38,42 @@
   }
 
   .project-cards-wrapper {
+    // @include responsive-padding;
     display: flex;
-    // justify-content: center;
+    align-items: center;
     gap: 2rem;
 
     max-width: 100vw;
-    padding: 1rem 0.75rem;
     overflow: auto;
-    margin-top: 1rem;
+    margin: auto 0;
   }
+
+  .progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: $light-blue-200;
+    transform-origin: 0%;
+  }
+}
+
+.embla {  
+  overflow: hidden;
+  
+}
+.embla__container {  
+  display: flex;
+  height: 39rem;
+  width: 100%;
+  padding-top: 0.5rem;
+  gap: 1rem;
+}
+.embla__slide {  
+  display: flex;
+  justify-content: center;
+  flex: 0 0 100%;  
+  min-width: 20rem;
+  padding: 0 0.75rem;
 }

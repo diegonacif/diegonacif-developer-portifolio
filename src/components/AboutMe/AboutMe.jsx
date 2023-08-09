@@ -13,7 +13,7 @@ export const AboutMe = () => {
   const textVariant = {
     hidden: {
       opacity: 0,
-      y: 10,
+      y: 5,
       x: 10,
     },
     show: {

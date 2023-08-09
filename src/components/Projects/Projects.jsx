@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import api from "../../services/api";
 import { ProjectCard } from "./components/ProjectCard/ProjectCard";
+import useEmblaCarousel from 'embla-carousel-react'
+import { motion } from 'framer-motion'
 import '../../App.scss';
 
 export const Projects = () => {
@@ -8,7 +10,7 @@ export const Projects = () => {
   const [repositories, setRepositories] = useState([]);
   const [loading, setIsLoading] = useState(true);
 
-  const filteredReposList = ['atto-rpg-2', 'totalink-page', 'pokedex-react']
+  const filteredReposList = ['atto-rpg-2', 'kan-do', 'totalink-page', 'pokedex-react']
 
   const filteredRepos = repositories.filter((objeto) =>
     filteredReposList.includes(objeto.name)
@@ -66,24 +68,86 @@ export const Projects = () => {
     }
   }, [loading]);
 
+  // Embla Carousel
+  const carouselRef = useRef(null)
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    containScroll: false
+  })
+
+  const [currentScrollSnap, setCurrentScrollSnap] = useState(0);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
+
+  const scrollPrev = useCallback(() => {    
+    if (emblaApi) emblaApi.scrollPrev()  
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {    
+    if (emblaApi) emblaApi.scrollNext()  
+  }, [emblaApi])
+
+  const onSelect = useCallback((emblaApi) => {    
+    setCanScrollPrev(emblaApi.canScrollPrev())
+    setCanScrollNext(emblaApi.canScrollNext())
+    setCurrentScrollSnap(emblaApi.selectedScrollSnap())
+  }, [])
+
+  useEffect(() => {    
+    if (emblaApi) {
+      emblaApi.on('select', onSelect)  
+    } 
+  }, [emblaApi, onSelect, loading])
+
+  const currentProgress = ((currentScrollSnap + 1) / emblaApi?.slideNodes().length )
+
   return (
     <section className="projects-container">
+      <motion.div 
+        className="progress-bar" 
+        style={{ scaleX: currentProgress, transition: 'all 0.3s' }}
+      />
       <div className="projects-title">
-        <span>&lt;</span>
-        <h2>Projetos</h2>
-        <span>&gt;</span>
+        <motion.span 
+          className={`${!canScrollPrev && 'scroll-button-off'}`}
+          onClick={scrollPrev}
+          whileInView={{ x: [0, 4, 0], opacity: 1, scale: 1 }} 
+          transition={{ repeat: Infinity }}
+        >
+          &lt;
+        </motion.span>
+        <motion.h2
+          transition={{ duration: 1 }}
+          initial={{ opacity: 0, scale: 0.85 }} 
+          whileInView={{ opacity: 1, scale: 1 }} 
+        >
+          Projetos
+        </motion.h2>
+        <motion.span 
+          className={`${!canScrollNext && 'scroll-button-off'}`}
+          onClick={scrollNext}
+          whileInView={{ x: [-1, -5, -1], opacity: 1, scale: 1 }} 
+          transition={{ repeat: Infinity }}
+        >
+          &gt;
+        </motion.span>
       </div>
 
       <div className="project-cards-wrapper">
-        {
-          filteredRepos.map((repo) => (
-            <ProjectCard key={repo.id} repo={repo} imageData={imageData}/>
-          ))
-        }
+        <div className="embla" >   
+          <div className="embla__viewport" ref={emblaRef}>
+            <div className="embla__container">
+              {
+                filteredRepos.map((repo) => (
+                  <div className="embla__slide" key={repo.id} ref={carouselRef}>
+                    <ProjectCard repo={repo} imageData={imageData}/>
+                  </div>
+                ))
+              }    
+            </div>    
+          </div>
+        </div>
       </div>
-
-      {/* <img src={"https://raw.githubusercontent.com/diegonacif/the-planets/main/screenshot.png"} alt="" /> */}
-      {/* <img src={imageData[0]?.url} alt="" /> */}
     </section>
   )
 }

@@ -6,8 +6,6 @@ export const ProjectCard = ({ repo, imageData }) => {
   const imageUrl = imageDataFiltered?.url ? imageDataFiltered?.url : placeholderImage;
   const repoTitle = repo.name.charAt(0).toUpperCase() + repo.name.slice(1)
 
-  console.log(repo.homepage)
-
   return (
     <div className="project-card-container">
       <div className="background-wrapper">
