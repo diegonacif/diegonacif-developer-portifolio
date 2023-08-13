@@ -1,4 +1,5 @@
 .project-card-container {
+  @include unselectable;
   position: relative;
   display: flex;
   flex-direction: column;

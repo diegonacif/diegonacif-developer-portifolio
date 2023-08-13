@@ -1,5 +1,6 @@
 .about-me-container {
   @include responsive-padding(2rem, 2rem);
+  @include unselectable;
   position: relative;
   height: 100dvh;
   max-height: 100vh;
@@ -41,10 +42,13 @@
     overflow-y: scroll;
     overflow-x: hidden;
 
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     height: auto;
+    max-width: 64rem;
     margin-top: 3rem;
+    margin: 3rem auto 0;
     padding: 0 0.5rem;
+    line-height: 1.5;
 
     cursor: default;
 
@@ -64,5 +68,11 @@
     background-position: center center;
     margin: 3rem auto 0 auto;
     filter: drop-shadow(0 0 6px $light-blue-200);
+  }
+
+  @media only screen and ($big-desktop-size) {
+    .about-me-text {
+      font-size: 1.25rem;
+    }
   }
 }

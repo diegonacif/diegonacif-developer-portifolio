@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import api from "../../services/api";
 import { ProjectCard } from "./components/ProjectCard/ProjectCard";
 import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 import { motion } from 'framer-motion'
 import '../../App.scss';
 
@@ -71,9 +72,13 @@ export const Projects = () => {
   // Embla Carousel
   const carouselRef = useRef(null)
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    containScroll: false
-  })
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { containScroll: false },
+    [Autoplay({
+      stopOnInteraction: false,
+      delay: 5000,
+    })]
+  )
 
   const [currentScrollSnap, setCurrentScrollSnap] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
