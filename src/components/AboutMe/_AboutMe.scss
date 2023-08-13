@@ -12,11 +12,15 @@
   background-color: $gray-900;
   color: $gray-100;
 
+  display: flex;
+  flex-direction: column;
+
   .about-me {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: .5rem;
+    height: max-content;
 
     span {
       position: relative;
@@ -32,8 +36,17 @@
   }
 
   .about-me-text {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
     font-size: 1.25rem;
+    height: auto;
     margin-top: 3rem;
+    padding: 0 0.5rem;
+
+    cursor: default;
 
     :not(:first-child) {
       margin-top: 1rem;
@@ -49,7 +62,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    margin: 4rem auto 0 auto;
+    margin: 3rem auto 0 auto;
     filter: drop-shadow(0 0 6px $light-blue-200);
   }
 }
