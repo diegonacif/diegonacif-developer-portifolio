@@ -61,7 +61,7 @@ export const AboutMe = () => {
         <motion.p variants={textVariant}>Sou alguém que encontra alegria nas pequenas coisas da vida e acredita que as melhores histórias são construídas com as pessoas que amamos.</motion.p>
         <motion.p variants={textVariant}>Sou casado com a Sofia, e tenho um cachorrinho que se chama Castiel.</motion.p>
         <motion.p variants={textVariant}>A natureza é meu refúgio, onde encontro paz e inspiração. Por isso prefiro vastos cenários naturais, do que os grandes centros urbanos, e planejo viajar e expandir esses horizontes para outros países.</motion.p>
-        <motion.p variants={textVariant}>Na minha vida cotidiana, tiro algum tempo para jogar RPG com os amigos ou assistir animes, onde as histórias ganham vida.</motion.p>
+        <motion.p variants={textVariant}>Nas minhas horas vagas, tiro algum tempo para jogar RPG com os amigos, assistir séries ou animes, onde as histórias ganham vida.</motion.p>
         <motion.p variants={textVariant}>Na música eu me sinto conectado ao universo. Enquanto toco violão, me sinto feliz e tranquilo. De forma amadora, cheguei até a tocar em um banda de J-Rock.</motion.p>
         <motion.p variants={textVariant}>A tecnologia me encanta por fazer com que possamos usufruir do nosso mundo de forma mais rápida e prática. E como sempre fui alguém que gosta de resolver problemas com soluções tecnológicas, me sinto realizado quando minhas linhas de código se transformam nessas soluções.</motion.p>
         <motion.p variants={textVariant}>Sou alguém que busca a profundidade nas experiências, que encontra beleza na simplicidade e que está sempre em busca de novas formas de descobrir o mundo e a mim mesmo.</motion.p>

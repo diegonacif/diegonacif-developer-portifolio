@@ -75,7 +75,7 @@ export const Projects = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { containScroll: false },
     [Autoplay({
-      stopOnInteraction: false,
+      stopOnInteraction: true,
       delay: 5000,
     })]
   )

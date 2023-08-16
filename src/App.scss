@@ -89,6 +89,32 @@ $notebook-size: "min-width: 992px";
 $desktop-size: "min-width: 1200px";
 $big-desktop-size: "min-width: 1920px";
 
+// Animations
+
+// ----------------------------------------
+// Rotate 360
+// ----------------------------------------
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 @mixin responsive-padding($pt: 0, $pb: 0) {
   padding: $pt 0.75rem $pb;
 
